@@ -1,0 +1,23 @@
+<html ng-app>
+<head>
+<script src="angular.js"></script>
+<style>body{font-size:x-large;font-family:arial,verdana;}</style>
+<script>
+'use strict';
+function MyController( $scope ) {
+	$scope.people = [{name:'Gary',credits:200},{name:'Mary',credits:2000}];
+}
+</script>
+</head>
+
+<body ng-controller="MyController">
+
+<table>
+<tr width="100%" ng-repeat="person in people">
+<td width="20%">{{person.name}}</td><td>{{person.credits}}</td>
+</tr>
+</table>
+
+</body>
+
+</html>

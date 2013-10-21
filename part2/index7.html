@@ -1,0 +1,25 @@
+<html>
+<head>
+	<script src="angular.js"></script>
+	<style>body{font-size:x-large;font-family:arial,verdana;}</style>
+<script>
+function MyController( $scope ) {
+	$scope.people = [
+		{ name: 'Jack', telephone:'555-1212' },
+		{ name: 'Johny', telephone:'555-2323' }
+	];
+}
+</script>
+</head>
+
+<body ng-app ng-controller="MyController">
+
+<table>
+<tr ng-repeat="person in people">
+	<td>{{person.name}}</td>
+	<td>{{person.telephone}}</td>
+</tr>
+</table>
+
+</body>
+</html>

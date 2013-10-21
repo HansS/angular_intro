@@ -1,0 +1,14 @@
+<html>
+<head>
+	<script src="angular.js"></script>
+	<style>body{font-size:x-large;font-family:arial,verdana;}</style>
+</head>
+<body ng-app>
+
+<input type="text" ng-model="arr" placeholder="Annual Recurring Revenue">
+<p>
+	Monthly Amount: {{arr/12.0|currency}}
+</p>
+
+</body>
+</html>

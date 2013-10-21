@@ -1,0 +1,29 @@
+<html>
+<head>
+	<script src="angular.js"></script>
+<script>
+function MyController( $scope ) {
+	$scope.people = [ { name: 'Jack' }, { name: 'Jason' }, { name: '' } ];
+	$scope.delete = function( index ) {
+		$scope.people.splice( index, 1 );
+	}
+	$scope.$watch( 'people', function( ) {
+		if ( $scope.people[ $scope.people.length -1 ].name.length > 0 ) {
+			$scope.people.push( { name: '' } );
+		}
+	}, true );
+}
+</script>
+</head>
+
+<body ng-app ng-controller="MyController">
+
+<table>
+<tr ng-repeat="person in people">
+<td><button ng-click="delete($index)" ng-show="person.name.length>0">X</button></td>
+<td><input type="text" ng-model="person.name"></input></td>
+</tr>
+</table>
+
+</body>
+</html>
